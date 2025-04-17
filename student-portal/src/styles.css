@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #4E73DF;
+    --secondary-color: #858796;
+    --success-color: #71f0c1;
+    --warning-color: #F6C23E;
+    --danger-color: #f0a099;
+    --info-color: #36B9CC;
+    --background-color: #F8F9FC;
+    --navbar-footer-color: #343A40;
+    --default-text-color: #5A5C69;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--default-text-color);
+  }
+  .my-custom-button {
+    background-color: var(--primary-color);
+    color: white;
+  }
+    

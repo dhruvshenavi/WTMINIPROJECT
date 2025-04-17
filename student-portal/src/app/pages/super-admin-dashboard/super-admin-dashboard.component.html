@@ -1,0 +1,144 @@
+<!-- <div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-header text-white" style="background-color: var(--info-color);">
+      ⚙️ Welcome, Super Admin!
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Manage Teachers & Admins</h5>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dr. Alice Johnson</td>
+            <td>alice.johnson&#64;example.com</td>
+            <td>Teacher</td>
+            <td><button class="btn btn-sm text-white" style="background-color: var(--danger-color);">Remove ❌</button></td>
+          </tr>
+          <tr>
+            <td>Prof. Bob Smith</td>
+            <td>bob.smith&#64;example.com</td>
+            <td>Admin</td>
+            <td><button class="btn btn-sm text-white" style="background-color: var(--danger-color);">Remove ❌</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="btn text-white mb-4" style="background-color: var(--primary-color);">➕ Add New Admin</button>
+
+      <hr>
+
+      <h5 class="card-title mt-4">Global Attendance Logs</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Subject</th>
+            <th>Teacher</th>
+            <th>Total Students</th>
+            <th>Present</th>
+            <th>Absent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>20-03-2025</td>
+            <td>Blockchain Basics</td>
+            <td>Dr. Alice Johnson</td>
+            <td>60</td>
+            <td>58</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>18-03-2025</td>
+            <td>Data Structures</td>
+            <td>Prof. Bob Smith</td>
+            <td>55</td>
+            <td>54</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <h5 class="card-title mt-4">System Settings</h5>
+      <button class="btn text-white" style="background-color: var(--secondary-color);">⚙️ Blockchain Settings</button>
+      <button class="btn text-white ms-2" style="background-color: var(--secondary-color);">🔔 Notifications Settings</button>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- super-admin-dashboard.component.html -->
+
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-header text-white" style="background-color: var(--info-color);">
+      ⚙️ Welcome, Super Admin!
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Manage Teachers & Admins</h5>
+
+      <!-- TABLE: dynamic list of admins from the contract -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Address</th>
+            <th>Role</th>
+            <th>Subject/Batch</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let admin of admins">
+            <td>{{ admin.address }}</td>
+            <td>{{ admin.role }}</td>
+            <td>{{ admin.subjectOrBatch }}</td>
+            <td>
+              <button class="btn btn-sm text-white" 
+                      style="background-color: var(--danger-color);"
+                      (click)="removeTeacher(admin.address)">
+                Remove ❌
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- FORM: Add New Teacher -->
+      <form (ngSubmit)="addNewTeacher()">
+        <div class="mb-3">
+          <label for="teacherAddress" class="form-label">Teacher Address</label>
+          <input type="text" class="form-control" id="teacherAddress"
+                 [(ngModel)]="teacherAddress" name="teacherAddress" required />
+        </div>
+        <div class="mb-3">
+          <label for="teacherRole" class="form-label">Role</label>
+          <input type="text" class="form-control" id="teacherRole"
+                 [(ngModel)]="teacherRole" name="teacherRole" required />
+        </div>
+        <div class="mb-3">
+          <label for="teacherSubject" class="form-label">Subject or Batch</label>
+          <input type="text" class="form-control" id="teacherSubject"
+                 [(ngModel)]="teacherSubject" name="teacherSubject" required />
+        </div>
+        <button type="submit" class="btn text-white mb-4" style="background-color: var(--primary-color);">
+          ➕ Add New Admin
+        </button>
+      </form>
+
+      <hr />
+
+      <!-- The rest of your attendance logs, system settings, etc. remain unchanged -->
+      <h5 class="card-title mt-4">Global Attendance Logs</h5>
+      ...
+    </div>
+  </div>
+</div>

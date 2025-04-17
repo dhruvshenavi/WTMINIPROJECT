@@ -1,0 +1,343 @@
+<!-- <div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-header text-white" style="background-color: var(--success-color);">
+        📚 Welcome, Teacher!
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Mark Student Attendance</h5>
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Subject</label>
+            <select class="form-select">
+              <option>Blockchain Basics</option>
+              <option>Data Structures</option>
+              <option>AI & ML</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Student Roll No.</label>
+            <input type="text" class="form-control" placeholder="e.g., 21101">
+          </div>
+          <button type="submit" class="btn text-white" style="background-color: var(--success-color);">Mark Attendance ✅</button>
+        </form>
+  
+        <hr>
+  
+        <h5 class="card-title mt-4">Recent Attendance Logs</h5>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Subject</th>
+              <th>Roll No.</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20-03-2025</td>
+              <td>Blockchain Basics</td>
+              <td>21101</td>
+              <td><span class="badge bg-success">Present</span></td>
+            </tr>
+            <tr>
+              <td>20-03-2025</td>
+              <td>Blockchain Basics</td>
+              <td>21102</td>
+              <td><span class="badge bg-danger">Absent</span></td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <hr>
+  
+        <h5 class="card-title mt-4">Student Approvals</h5>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            John Doe (Roll: 21103)
+            <div>
+              <button class="btn btn-sm text-white me-2" style="background-color: var(--success-color);">Approve ✅</button>
+              <button class="btn btn-sm text-white" style="background-color: var(--danger-color);">Decline ❌</button>
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Jane Smith (Roll: 21104)
+            <div>
+              <button class="btn btn-sm text-white me-2" style="background-color: var(--success-color);">Approve ✅</button>
+              <button class="btn btn-sm text-white" style="background-color: var(--danger-color);">Decline ❌</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+   -->
+
+   <!-- <div class="container mt-4">
+    <h2>Teacher Dashboard</h2>
+    <h4>Your Course: {{ teacherSubject }}</h4>
+  
+    
+    <h3>Pending Registrations</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Roll No.</th>
+          <th>Course</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of pendingStudents">
+          <td>{{ student.name }}</td>
+          <td>{{ student.rollNo }}</td>
+          <td>{{ student.courseName }}</td>
+          <td>
+            <button class="btn btn-success" (click)="approveStudent(student.address)">Approve</button>
+            <button class="btn btn-danger ms-2" (click)="declineStudent(student.address)">Decline</button>
+          </td>
+        </tr>
+        <tr *ngIf="pendingStudents.length === 0">
+          <td colspan="4" class="text-center">No pending registrations</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    
+    <h3>Registered Students</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Roll No.</th>
+          <th>Course</th>
+          <th>Attendance Count</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of registeredStudents">
+          <td>{{ student.name }}</td>
+          <td>{{ student.rollNo }}</td>
+          <td>{{ student.courseName }}</td>
+          <td>{{ student.attendance }}</td>
+          <td>
+            
+            <button class="btn btn-danger" (click)="removeRegisteredStudent(student.address)">Remove</button>
+          </td>
+        </tr>
+        <tr *ngIf="registeredStudents.length === 0">
+          <td colspan="5" class="text-center">No registered students</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   -->
+
+   <!-- <div class="container mt-4">
+    <h2>Teacher Dashboard</h2>
+    <h4>Your Course: {{ teacherSubject }}</h4>
+    
+    
+    <h3>Pending Registrations</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Roll No.</th>
+          <th>Course</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of pendingStudents">
+          <td>{{ student.name }}</td>
+          <td>{{ student.rollNo }}</td>
+          <td>{{ student.courseName }}</td>
+          <td>
+            <button class="btn btn-success" (click)="approveStudent(student.address)">Approve</button>
+            <button class="btn btn-danger ms-2" (click)="declineStudent(student.address)">Decline</button>
+          </td>
+        </tr>
+        <tr *ngIf="pendingStudents.length === 0">
+          <td colspan="4" class="text-center">No pending registrations</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    
+    <h3>Registered Students</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Roll No.</th>
+          <th>Course</th>
+          <th>Attendance Count</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of registeredStudents">
+          <td>{{ student.name }}</td>
+          <td>{{ student.rollNo }}</td>
+          <td>{{ student.courseName }}</td>
+          <td>{{ student.attendance }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="removeRegisteredStudent(student.address)">Remove</button>
+          </td>
+        </tr>
+        <tr *ngIf="registeredStudents.length === 0">
+          <td colspan="5" class="text-center">No registered students</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   -->
+
+   <div class="container mt-4">
+    <h2>Teacher Dashboard</h2>
+    <h4>Your Course: {{ teacherSubject }}</h4>
+  
+    <!-- Form to create a new attendance request -->
+    <div class="mb-4">
+      <h4>Create Attendance Request</h4>
+      <form (ngSubmit)="createRequest()">
+        <div class="mb-3">
+          <label for="deadline" class="form-label">Deadline (Date & Time)</label>
+          <!-- Use datetime-local input for a user-friendly date/time picker -->
+          <input type="datetime-local" id="deadline" class="form-control" [(ngModel)]="newDeadline" name="newDeadline" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Request</button>
+      </form>
+    </div>
+  
+    <!-- Section to display attendance requests (if any) -->
+    <div class="container mt-4">
+      <h3>All Requests (Combined)</h3>
+    
+      <!-- Single Marked Attendance Table -->
+      <!-- Single Marked Attendance Table -->
+<h4>Marked Attendance (All Requests Combined)</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>Roll No.</th>
+      <th>Attendance Count</th>
+      <th>Request ID</th>
+      <th>Deadline</th>
+      <th>Marked Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of allMarked">
+      <td>{{ item.name }}</td>
+      <td>{{ item.rollNo }}</td>
+      <td>{{ item.attendance }}</td>
+      <td>{{ item.requestId }}</td>
+      <td>{{ item.deadline | date:'short' }}</td>
+      <td>{{ item.markedTime ? (item.markedTime * 1000) | date:'short' : '' }}</td>
+    </tr>
+    <tr *ngIf="allMarked.length === 0">
+      <td colspan="6" class="text-center">
+        No students have marked attendance for any requests
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Single Unmarked Attendance Table -->
+<h4>Unmarked Attendance (All Requests Combined)</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>Roll No.</th>
+      <th>Attendance Count</th>
+      <th>Request ID</th>
+      <th>Deadline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of allUnmarked">
+      <td>{{ item.name }}</td>
+      <td>{{ item.rollNo }}</td>
+      <td>{{ item.attendance }}</td>
+      <td>{{ item.requestId }}</td>
+      <td>{{ item.deadline | date:'short' }}</td>
+    </tr>
+    <tr *ngIf="allUnmarked.length === 0">
+      <td colspan="5" class="text-center">
+        No unmarked attendance found
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+    
+  
+    <!-- Existing Pending Students Table -->
+    <h3>Pending Registrations</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Roll No.</th>
+          <th>Course</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of pendingStudents">
+          <td>{{ student.name }}</td>
+          <td>{{ student.rollNo }}</td>
+          <td>{{ student.courseName }}</td>
+          <td>
+            <button class="btn btn-success" (click)="approveStudent(student.address)">Approve</button>
+            <button class="btn btn-danger ms-2" (click)="declineStudent(student.address)">Decline</button>
+          </td>
+        </tr>
+        <tr *ngIf="pendingStudents.length === 0">
+          <td colspan="4" class="text-center">No pending registrations</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Existing Registered Students Table -->
+    <h3>Registered Students</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Roll No.</th>
+          <th>Course</th>
+          <th>Attendance Count</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of registeredStudents">
+          <td>{{ student.name }}</td>
+          <td>{{ student.rollNo }}</td>
+          <td>{{ student.courseName }}</td>
+          <td>{{ student.attendance }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="removeRegisteredStudent(student.address)">
+              Remove
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="registeredStudents.length === 0">
+          <td colspan="5" class="text-center">No registered students</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

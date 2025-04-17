@@ -1,0 +1,146 @@
+<!-- <div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-header bg-primary text-white">
+        🎓 Welcome, Student!
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Attendance Overview</h5>
+        <p class="card-text">Your attendance summary for this semester.</p>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Subject</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20-03-2025</td>
+              <td><span class="badge bg-success">Present</span></td>
+              <td>Blockchain Basics</td>
+            </tr>
+            <tr>
+              <td>18-03-2025</td>
+              <td><span class="badge bg-danger">Absent</span></td>
+              <td>Data Structures</td>
+            </tr>
+            <tr>
+              <td>16-03-2025</td>
+              <td><span class="badge bg-success">Present</span></td>
+              <td>Blockchain Basics</td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <button class="btn btn-primary">View Detailed Attendance 📅</button>
+        <button class="btn btn-success ms-2">View Rewards 🎁</button>
+      </div>
+    </div>
+
+
+    <div class="max-w-md mx-auto p-6 bg-white shadow-lg rounded-xl mt-4">
+      <h2 class="text-xl font-semibold mb-4">📝 Complete Your Registration</h2>
+    
+      <form (ngSubmit)="submitForm()" class="space-y-4">
+        <div>
+          <label class="block font-medium">Full Name</label>
+          <input [(ngModel)]="name" name="name" required class="w-full border p-2 rounded-md" placeholder="Enter your name" />
+        </div>
+    
+        <div>
+          <label class="block font-medium">Roll Number</label>
+          <input [(ngModel)]="rollNo" name="rollNo" required class="w-full border p-2 rounded-md" placeholder="Enter your roll number" />
+        </div>
+    
+        <button type="submit" [disabled]="isSubmitting" class="bg-blue-600 text-white px-4 py-2 rounded-lg w-full">
+          {{ isSubmitting ? 'Submitting...' : 'Submit Registration' }}
+        </button>
+      </form>
+    
+      <div *ngIf="successMessage" class="mt-3 text-green-600 font-medium">
+        {{ successMessage }}
+      </div>
+      <div *ngIf="errorMessage" class="mt-3 text-red-600 font-medium">
+        {{ errorMessage }}
+      </div>
+    </div>
+    
+
+  </div>
+   -->
+
+   <div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-header bg-primary text-white">
+        🎓 Welcome, Student!
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Attendance Overview</h5>
+        <p class="card-text">Your attendance summary for this semester.</p>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Subject</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20-03-2025</td>
+              <td><span class="badge bg-success">Present</span></td>
+              <td>Blockchain Basics</td>
+            </tr>
+            <tr>
+              <td>18-03-2025</td>
+              <td><span class="badge bg-danger">Absent</span></td>
+              <td>Data Structures</td>
+            </tr>
+            <tr>
+              <td>16-03-2025</td>
+              <td><span class="badge bg-success">Present</span></td>
+              <td>Blockchain Basics</td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <button class="btn btn-primary">View Detailed Attendance 📅</button>
+        <button class="btn btn-success ms-2">View Rewards 🎁</button>
+      </div>
+    </div>
+  
+    <div class="max-w-md mx-auto p-6 bg-white shadow-lg rounded-xl mt-4">
+      <h2 class="text-xl font-semibold mb-4">📝 Complete Your Registration</h2>
+    
+      <form (ngSubmit)="submitForm()" class="space-y-4">
+        <div>
+          <label class="block font-medium">Full Name</label>
+          <input [(ngModel)]="name" name="name" required class="w-full border p-2 rounded-md" placeholder="Enter your name" />
+        </div>
+    
+        <div>
+          <label class="block font-medium">Roll Number</label>
+          <input [(ngModel)]="rollNo" name="rollNo" required class="w-full border p-2 rounded-md" placeholder="Enter your roll number" />
+        </div>
+  
+        <!-- New field for course name -->
+        <div>
+          <label class="block font-medium">Course Name</label>
+          <input [(ngModel)]="courseName" name="courseName" required class="w-full border p-2 rounded-md" placeholder="Enter course name" />
+        </div>
+    
+        <button type="submit" [disabled]="isSubmitting" class="bg-blue-600 text-white px-4 py-2 rounded-lg w-full">
+          {{ isSubmitting ? 'Submitting...' : 'Submit Registration' }}
+        </button>
+      </form>
+    
+      <div *ngIf="successMessage" class="mt-3 text-green-600 font-medium">
+        {{ successMessage }}
+      </div>
+      <div *ngIf="errorMessage" class="mt-3 text-red-600 font-medium">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+  
